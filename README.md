@@ -13,11 +13,12 @@ Build topoly package:
 1. In topoly project (main folder):
 ``python3 setup.py bdist_wheel``
 
-2. Navigate back to topoly_test and activate Python virtual environment:
+Install Package
+1. Navigate back to topoly_test and activate Python virtual environment:
 ``source venv/bin/activate``
   
-3. Install topoly package
-``pip install $TOPOLY/dist/topoly*.whl``
+2. Install topoly package
+``pip install TOPOLY_PROJECT/dist/topoly*.whl``
 
 ### Run tests
 
