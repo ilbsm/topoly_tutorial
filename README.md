@@ -22,7 +22,4 @@ Install Package
 
 ### Run tests
 
-1. Add topoly shared libraries to library search path
-``source ./env``
-
-3. python test_py_preprocess.py
+python test_py_preprocess.py
