@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 import sys
 
-from topoly_preprocess import chain_read
-from topoly_preprocess import close_chain_2points
+from topoly.topoly_preprocess import chain_read
+from topoly.topoly_preprocess import close_chain_2points
 
 if __name__ == "__main__":
     # arg 1 - input file path
