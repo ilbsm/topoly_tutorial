@@ -18,7 +18,11 @@ Install Package
 ``source venv/bin/activate``
   
 2. Install topoly package
+``pip install topoly``
+
+If you've built the package yourself you can install it this way:
 ``pip install TOPOLY_PROJECT/dist/topoly*.whl``
+
 
 ### Run tests
 
