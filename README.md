@@ -3,27 +3,23 @@
 ### Requirements
 - Python 3 (3.5 or later)
 
-### Setup Python Virtual Environment
+### Setup Python Virtual Environment (Optional)
 
-Run:
-``./setup.sh``
+1. Create a new virtual environment in the venv folder: 
+``python3 -m venv venv``
+2. Activate this environment:
+``source venv/bin/activate``
+3. You may need to update pip before installing topoly:
+``pip3 install --upgrade pip``
 
 ### Install Topoly package
-Build topoly package:
-1. In topoly project (main folder):
-``python3 setup.py bdist_wheel``
 
-Install Package
-1. Navigate back to topoly_test and activate Python virtual environment:
-``source venv/bin/activate``
-  
-2. Install topoly package
+Install topoly package
 ``pip install topoly``
 
-If you've built the package yourself you can install it this way:
-``pip install TOPOLY_PROJECT/dist/topoly*.whl``
+### Run tutorial examples
 
-
-### Run tests
-
-python test_py_preprocess.py
+1. Preprocessing 
+``python test_py_preprocess.py``
+2. Knots and polynomials
+``python knot_polynomials.py``
