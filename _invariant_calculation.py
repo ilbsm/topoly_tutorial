@@ -1,5 +1,4 @@
-from topoly import (alexander, jones, conway, homfly, kauffman_bracket, 
-                    kauffman_polynomial, blmho, yamada, aps, writhe)
+from topoly import homfly, yamada
 from topoly.params import Closure, test
 from time import perf_counter
 """
@@ -10,6 +9,8 @@ HOMFLYPT polynomial.
 Firstly, please read tutorial page: https://tinyurl.com/tkdrrdt
 """
 homfly = test(homfly)
+yamada = test(yamada)
+
 
 #=======================
 # OPEN AND CLOSED CHAIN
@@ -101,32 +102,25 @@ print('\n result achiral:', achiral)
 print('\n result chiral:', chiral)
 
 
+
+#============================
+# THETA-CURVES AND HANDCUFFS
+#============================
+print('\n\n== Theta-curves and handcuffs ==')
+
+# In Topoly there is possibility of investigating other structures
+# besides knots. Yamada polynomial gives the possibility for 
+# identyfing theta-curves and handcuff graphs (and lassos, but their
+# functions are described in „lasso_minimal_surface.py" file).
+
+
+
 #===========
 # SUBCHAINS
 #===========
-print('\n\n== Subchains ==')
-# Using parameter „boundaries" you can find topology of fragment of 
-# passed chain.
+# Using parameter „boundaries" you can find topology of fragment of
+# passed chain, or even find topology of every possible subchain
+# (using „matrix" parameter). 
 
-subchain = homfly(structure_open, boundaries=[[3,40]])
-subchains = homfly(structure_open, boundaries=[[3,40],[40,80]])
-
-print('\n result subchain:', subchain)
-print('\n result subchains:', subchains)
-
-
-#==============
-# TOPOLOGY MAP
-#==============
-print('\n\n== Topology map ==')
-# If you are interested in topology of many subchains, consider using  
-# „matrix parameter".
-
-topology_map = homfly(structure_open, matrix=True, density=100, level = 0.1, 
-                      matrix_plot = True)
-print('\n result topology map:', topology_map)
-
-
-
-
+# It is described in „subchains_matrices.py" file.
 
