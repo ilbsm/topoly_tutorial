@@ -26,10 +26,18 @@ print('\n result subchains:', subchains)
 # TOPOLOGY MAP
 #==============
 print('\n\n== Topology map ==')
-# If you are interested in topology of many subchains, consider using
-# „matrix" parameter.
+# If you want check all possible subchains, consider using „matrix" 
+# parameter. This parameter lets you calculate invariant over whole 
+# spectrum of possible subchains. 
 
-topology_map = homfly(structure_open, matrix=True, density=20, level = 10,
+# Consequently, this can take very long time to compute, therefore, 
+# function contains the „density" parameter which controls how precisely
+# the space of all possible subchains will be explored. For density=1
+# all possible subchains are checked. For higher values passed to the 
+# density parameter, the number of atoms will be cut and analysed 
+# subsequently. 
+
+topology_map = homfly(structure_open, matrix=True, density=100, level = 10,
                       matrix_plot = True)
 print('\n result topology map:', topology_map)
 
