@@ -19,7 +19,15 @@ Install topoly package
 
 ### Run tutorial examples
 
-1. Preprocessing 
-``python test_py_preprocess.py``
-2. Knots and polynomials
-``python knot_polynomials.py``
+1. Loading data
+and
+2. Finding loops (and other loop-like structures) 
+``python import_and_find.py``
+3. Knots, links and their polynomials
+``python knots_links.py``
+4. Gaussian linking number (GLN)
+``python GLN.py``
+5. Lassos and minimal surfaces
+``python lasso_minimal_surface.py``
+6. Map manipulation: Knot maps, GLN maps
+`python matrices.py```
