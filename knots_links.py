@@ -119,8 +119,8 @@ print('\n\n== Subchains ==')
 # Using parameter „boundaries" you can find topology of fragment of             
 # passed chain.                                                                 
                                                                                 
-subchain = homfly(protein, boundaries=[[3,40]])                                 
-subchains = homfly(protein, boundaries=[[3,40],[40,80]])                        
+subchain = homfly(structure_open, boundaries=[[3,40]])                                 
+subchains = homfly(structure_open, boundaries=[[3,40],[40,80]])                        
                                                                                 
 print('\n result subchain:', subchain)                                          
 print('\n result subchains:', subchains) 

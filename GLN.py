@@ -15,6 +15,7 @@ arc2 = 'data/arc2.xyz'
 #===============================
 # Gaussian linking number (GLN)
 #===============================
+print('== Gaussian linking number ==')
 # Simplest usage is to calculate gln between two arcs:
 full = gln(arc1, arc2)
 # ...or their fragments:
@@ -22,9 +23,9 @@ fragm = gln(arc1, arc2, chain1_boundary=[3,8], chain2_boundary=[5,16])
 # You can also calculate gln between two disjoint fragments of one arc:
 onearc = gln(arc2, chain1_boundary=[1,8], chain2_boundary=[9,20])
 
-print('GLN between full chains:', full)
-print('GLN between subchains:', fragm)
-print('GLN between subchains of one structure:', onearc)
+print('\nGLN between full chains:', full)
+print('\nGLN between subchains:', fragm)
+print('\nGLN between subchains of one structure:', onearc)
 
 # You can also find maximal absolute value of gln between all possible 
 # subchains of both arcs. Paramter max_density regulates how precise the
@@ -33,13 +34,13 @@ print('GLN between subchains of one structure:', onearc)
 # analysed subsequently.
 
 maxgln = gln(arc1, arc2, mode=GlnMode.MAX, max_density=1)
-print('Max GLN between subchains of arc1 and subchains of arc2:', maxgln)
+print('\nMax GLN between subchains of arc1 and subchains of arc2:', maxgln)
 
 # Also you can find average value of gln over all possible subchains of both
 # arcs:
 
 avggln = gln(arc1, arc2, mode=GlnMode.AVG, max_density=1)
-print('Average GLN between subchains of arc1 and subchains of arc2:', avggln)
+print('\nAverage GLN between subchains of arc1 and subchains of arc2:', avggln)
 
 # If you are more interested in GLN subchain values you can use matrix mode.
 # In this mode you will get GLN values between first arc and all possible 
@@ -47,6 +48,6 @@ print('Average GLN between subchains of arc1 and subchains of arc2:', avggln)
 
 matrixgln = gln(arc2, arc1, mode=GlnMode.MATRIX, matrix_plot_fname='glnmap',
                 matrix_plot_format=PlotFormat.PDF)
-print('glnmap.pdf file with gln map generated.')
+print('\nglnmap.pdf file with gln map generated.')
 
 # For more information about matrices check „matrices.py" file.

@@ -1,5 +1,5 @@
 from topoly import lasso_type, make_surface
-from topoly.params import OutputTypeLasso, PrecisionSurface, DensitySurface, SurfacePlotFormat, test
+from topoly.params import PrecisionSurface, DensitySurface, SurfacePlotFormat, test
 
 """
 Here are described method for lasso topology identification and minimal
@@ -12,9 +12,10 @@ make_surface = test(make_surface)
 polymer_lasso = 'data/lasso.xyz'
 protein_lasso = 'data/1ax8.pdb'
 
-#============
-# LASSO TYPE
-#===========
+#===========================
+# LASSO TYPE IDENTIFICATION
+#===========================
+print('== Lasso type identification ==')
 # If you want to check lasso topology type use „lasso_type" function.
 # It requires a structure and its first and last indices:
 
@@ -48,17 +49,18 @@ print('.pdb structure lasso type:', protein_lasso_type)
 no_reduction = lasso_type(polymer_lasso, [1,12], min_dist=[1,1,1])
 print('.xyz structure lasso type without reduction:', no_reduction)
 
-# You can get more precise output using parameter „output_type" with
-# argument „OutputTypeLasso.MoreInfo".
+# You can get more precise output using parameter „more_info" with
+# „True" value.
 
 no_reduction = lasso_type(polymer_lasso, [1,12], min_dist=[1,1,1],
-                          output_type=OutputTypeLasso.MoreInfo)
+                          more_info=True)
 print('.xyz structure lasso type without reduction -- more info:', no_reduction)
 
 
 #================
 # OUTPUT QUALITY
 #================
+print('== Output quality ==')
 # Your output depends on quality of calculated minimal surface. You can
 # control its quality using „precision", „density" and „smooth" 
 # parameters. Higher precision and density gives better results but
@@ -66,16 +68,16 @@ print('.xyz structure lasso type without reduction -- more info:', no_reduction)
 # quality of surface. Default values: precision=PrecisionSurface.HIGH,
 # density=DensitySurface.MEDIUM, smooth=0.
 
-quality = lasso_type(polymer_lasso, [1,12], min_dist=[1,1,1],
-                     precision=PrecisionSurface.HIGH,
-                     density=DensitySurface.MEDIUM, smooth=0,
-                     output_type=OutputTypeLasso.MoreInfo)
+quality = lasso_type(polymer_lasso, [1,12], min_dist=[1,1,1], smooth=0,
+                     more_info=True, precision=PrecisionSurface.HIGH,
+                     density=DensitySurface.MEDIUM)
 print('.xyz structure -- higher quality:', quality)
 
 
-#==============
-# SHOW SURFACE
-#==============
+#=========================
+# SHOWING MINIMAL SURFACE
+#=========================
+print('== Showing minimal surface ==')
 # You can check the shape of minimal surface using „pic_files" parameter.
 
 lasso_type(polymer_lasso, [1,12], min_dist=[1,1,1], pic_files=SurfacePlotFormat.VMD)

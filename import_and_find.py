@@ -11,9 +11,10 @@ find_handcuffs too, but finds handcuffs.
 find_loops = test(find_loops)
 f = 'data/'
 
-#=====================
-# IMPORTING FROM FILE
-#=====================
+#===============================
+# IMPORTING STRUCTURE FROM FILE
+#===============================
+print('== Importing structure from file ==')
 # You can import structures from a file. There are few accepted formats:
 # pdb -- standard format for protein structure data
 pdb  = find_loops(f+'1ax8.pdb')
@@ -36,9 +37,10 @@ print('nxyz result:', nxyz)
 math = find_loops(f+'1ax8.math')
 print('math result:', math)
 
-#=========================
-# IMPORTING FORM VARIABLE
-#=========================
+#===================================
+# IMPORTING STRUCTURE FROM VARIABLE
+#==================================
+print('== Importing structure from variable ==')
 # here are few examples for importing from a variable:
 
 # list of lists
