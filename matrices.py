@@ -36,7 +36,7 @@ print('\n\n== Knot map ==')
 # on ordinary computer quickly.
 
 knot_matrix = conway(polygon, tries=10, matrix=True, density=1, level=0, 
-                matrix_plot=True, plot_format = 'png',
+                matrix_plot=True, plot_format = PlotFormat.PDF,
                 plot_ofile = 'map_knot')
 print('\n resulting knot matrix:', knot_matrix)
 
@@ -79,4 +79,4 @@ print('\n gln centers:', gln_centers)
 # parameters than invariant calcluating functions, giving you more
 # control over printed output. 
 matrix2 = plot_matrix(gln_matrix, arrows=False, cutoff=0.2, plot_format='pdf',
-                      plot_ofile = 'map2')
+                      plot_ofile = 'map_gln2')

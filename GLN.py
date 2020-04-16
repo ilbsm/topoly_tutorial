@@ -50,4 +50,4 @@ matrixgln = gln(arc2, arc1, mode=GlnMode.MATRIX, matrix_plot_fname='glnmap',
                 matrix_plot_format=PlotFormat.PDF)
 print('\nglnmap.pdf file with gln map generated.')
 
-# For more information about matrices check „matrices.py" file.
+# For more information about matrix manipulation check „matrices.py" file.

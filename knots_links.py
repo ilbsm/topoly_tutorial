@@ -1,5 +1,5 @@
 from topoly import homfly, yamada
-from topoly.params import Closure, test
+from topoly.params import Closure, PlotFormat test
 from time import perf_counter
 """
 In Topoly there are 10 invariant calculating functions. All of them are
@@ -101,17 +101,6 @@ print('\n result achiral:', achiral)
 print('\n result chiral:', chiral)
 
 
-#============================
-# THETA-CURVES AND HANDCUFFS
-#============================
-print('\n\n== Theta-curves and handcuffs ==')
-
-# In Topoly there is possibility of investigating other structures
-# besides knots. Yamada polynomial gives the possibility for 
-# identyfing theta-curves and handcuff graphs (and lassos, but their
-# functions are described in „lasso_minimal_surface.py" file).
-
-
 #===========                                                                    
 # SUBCHAINS                                                                     
 #===========                                                                    
@@ -125,6 +114,28 @@ subchains = homfly(structure_open, boundaries=[[3,40],[40,80]])
 print('\n result subchain:', subchain)                                          
 print('\n result subchains:', subchains) 
 
-# If you want check all possible subchains, consider using „matrix"             
-# parameter. This parameter lets you calculate invariant over whole             
-# spectrum of possible subchains. For more check „matrices.py" file.
+#==========
+# KNOT MAP
+#==========
+print('\n\n== Knot map ==')
+# If you want check all possible subchains, consider using „matrix"
+# parameter. This parameter lets you calculate invariant over whole
+# spectrum of possible subchains.
+
+# Consequently, this can take very long time to compute, therefore,
+# function contains the „density" parameter which controls how precisely
+# the space of all possible subchains will be explored. For density=1
+# all possible subchains are checked. For higher values passed to the
+# density parameter, the number of atoms will be cut and analysed
+# subsequently.
+
+# Here we use conway polynomial (it is faster then homfly), with
+# parameter „tries=10", to make possible calculating whole matrix
+# on ordinary computer quickly.
+
+knot_matrix = conway(polygon, tries=10, matrix=True, density=1, level=0,
+                matrix_plot=True, plot_format = PlotFormat.PDF,
+                plot_ofile = 'map_knot')
+print('\n resulting knot matrix:', knot_matrix)
+
+# For more info about matrix manipulation check „matrices.py".
