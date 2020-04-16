@@ -30,4 +30,4 @@ and
 5. Lassos and minimal surfaces
 ``python lasso_minimal_surface.py``
 6. Map manipulation: Knot maps, GLN maps
-`python matrices.py```
+``python matrices.py``
