@@ -14,52 +14,54 @@ f = 'data/'
 #===============================
 # IMPORTING STRUCTURE FROM FILE
 #===============================
-print('== Importing structure from file ==')
+print('\n== Importing structure from file ==')
 # You can import structures from a file. There are few accepted formats:
 # pdb -- standard format for protein structure data
 pdb  = find_loops(f+'1ax8.pdb')
-print('pdb result:', pdb)
+print('\npdb result:', pdb)
 
 # cif -- standard format for crystallographic strucutre data:
 cif  = find_loops(f+'1ax8.cif')
-print('cif result:', cif)
+cif  = find_loops(f+'1j85.cif')
+print('\ncif result:', cif)
 
 # xyz -- standard coordinate format with three or four columns
 # three columns: x, y, z
 xyz  = find_loops(f+'1ax8.xyz')
-print('xyz result:', xyz)
+print('\nxyz result:', xyz)
 
 # four columns: index, x, y, z
 nxyz = find_loops(f+'1ax8.nxyz')
-print('nxyz result:', nxyz)
+print('\nnxyz result:', nxyz)
 
 # mathematica array format (nested curly-braced lists)
 math = find_loops(f+'1ax8.math')
-print('math result:', math)
+math = find_loops(f+'1j85.math')
+print('\nmath result:', math)
 
 #===================================
 # IMPORTING STRUCTURE FROM VARIABLE
 #==================================
-print('== Importing structure from variable ==')
+print('\n\n== Importing structure from variable ==')
 # here are few examples for importing from a variable:
 
 # list of lists
-lol_structure = [[0,0,0],[1,0,0],[1,1,0],[0,1,0],[0,0,0]]
+lol_structure = "[[0,0,0],[1,0,0],[1,1,0],[0,1,0],[0,0,0]]"
 list_of_lists = find_loops(lol_structure)
-print('list-of-lists result:', list_of_lists)
+print('\nlist-of-lists result:', list_of_lists)
 
 # list of lists with index
 lolwi_structure = [[1,0,0,0],[2,1,0,0],[3,1,1,0],[4,0,1,0],[1,0,0,0]]
 list_of_lists_with_index = find_loops(lolwi_structure)
-print('list-of-lists-with-index result:', list_of_lists_with_index)
+print('\nlist-of-lists-with-index result:', list_of_lists_with_index)
 
 # pdcode
 pdcode_structure = None
 pdcode = find_loops(pdcode_structure)
-print('pdcode result:', pdcode)
+print('\npdcode result:', pdcode)
 
 # emcode
 emcode_structure = None
 emcode = find_loops(emcode_structure)
-print('pdcode result:', emcode)
+print('\npdcode result:', emcode)
 
