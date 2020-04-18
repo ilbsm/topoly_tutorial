@@ -22,6 +22,7 @@ print('\npdb result:', pdb)
 
 # cif -- standard format for crystallographic strucutre data:
 cif  = find_loops(f+'1ax8.cif')
+print('\ncif result:', cif)
 cif  = find_loops(f+'1j85.cif')
 print('\ncif result:', cif)
 
@@ -36,6 +37,7 @@ print('\nnxyz result:', nxyz)
 
 # mathematica array format (nested curly-braced lists)
 math = find_loops(f+'1ax8.math')
+print('\nmath result:', math)
 math = find_loops(f+'1j85.math')
 print('\nmath result:', math)
 
@@ -46,7 +48,7 @@ print('\n\n== Importing structure from variable ==')
 # here are few examples for importing from a variable:
 
 # list of lists
-lol_structure = "[[0,0,0],[1,0,0],[1,1,0],[0,1,0],[0,0,0]]"
+lol_structure = [[0,0,0],[1,0,0],[1,1,0],[0,1,0],[0,0,0]]
 list_of_lists = find_loops(lol_structure)
 print('\nlist-of-lists result:', list_of_lists)
 
