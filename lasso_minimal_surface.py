@@ -68,11 +68,10 @@ print('== Output quality ==')
 # quality of surface. Default values: precision=PrecisionSurface.HIGH,
 # density=DensitySurface.MEDIUM, smooth=0.
 
-quality = lasso_type(polymer_lasso, [1,12], min_dist=[1,1,1], smooth=0,
+quality = lasso_type(polymer_lasso, [1,12], min_dist=[1,1,1], smooth=1,
                      more_info=True, precision=PrecisionSurface.HIGH,
                      density=DensitySurface.MEDIUM)
 print('.xyz structure -- higher quality:', quality)
-
 
 #=========================
 # SHOWING MINIMAL SURFACE
