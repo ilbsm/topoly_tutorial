@@ -1,5 +1,5 @@
-from topoly import homfly, yamada
-from topoly.params import Closure, PlotFormat test
+from topoly import conway, homfly, yamada
+from topoly.params import Closure, PlotFormat, test
 from time import perf_counter
 """
 In Topoly there are 10 invariant calculating functions. All of them are
@@ -8,6 +8,7 @@ HOMFLYPT polynomial.
 
 Firstly, please read tutorial page: https://tinyurl.com/tkdrrdt
 """
+conway = test(conway)
 homfly = test(homfly)
 yamada = test(yamada)
 
@@ -133,6 +134,7 @@ print('\n\n== Knot map ==')
 # parameter „tries=10", to make possible calculating whole matrix
 # on ordinary computer quickly.
 
+polygon='data/knot51.xyz'
 knot_matrix = conway(polygon, tries=10, matrix=True, density=1, level=0,
                 matrix_plot=True, plot_format = PlotFormat.PDF,
                 plot_ofile = 'map_knot')

@@ -48,8 +48,8 @@ print('\n\n== GLN map ==')
 # mode. In this mode you will get GLN values between first arc and all 
 # possible subchains of arc2:
                                                                                 
-gln_matrix = gln(arc2, arc1, mode=GlnMode.MATRIX, matrix_plot_fname='map_gln',
-                matrix_plot_format=PlotFormat.PDF)
+gln_matrix = gln(arc2, arc1, matrix=True, matrix_plot=True, 
+                 matrix_plot_fname='map_gln', matrix_plot_format=PlotFormat.PDF)
 print('\n resulting gln matrix:', gln_matrix)
 
 #=====================

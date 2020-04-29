@@ -33,21 +33,21 @@ print('\nGLN between subchains of one structure:', onearc)
 # values passed to the max_density, the number of atoms will be cut and 
 # analysed subsequently.
 
-maxgln = gln(arc1, arc2, mode=GlnMode.MAX, max_density=1)
+maxgln = gln(arc1, arc2, maxGLN=True, max_density=1)
 print('\nMax GLN between subchains of arc1 and subchains of arc2:', maxgln)
 
 # Also you can find average value of gln over all possible subchains of both
 # arcs:
 
-avggln = gln(arc1, arc2, mode=GlnMode.AVG, max_density=1)
+avggln = gln(arc1, arc2, avgGLN=True)
 print('\nAverage GLN between subchains of arc1 and subchains of arc2:', avggln)
 
 # If you are more interested in GLN subchain values you can use matrix mode.
 # In this mode you will get GLN values between first arc and all possible 
 # subchains of arc2:
 
-matrixgln = gln(arc2, arc1, mode=GlnMode.MATRIX, matrix_plot_fname='glnmap',
-                matrix_plot_format=PlotFormat.PDF)
+matrixgln = gln(arc2, arc1, matrix=True, matrix_plot=True, 
+                matrix_plot_fname='glnmap', matrix_plot_format=PlotFormat.PDF)
 print('\nglnmap.pdf file with gln map generated.')
 
 # For more information about matrix manipulation check „matrices.py" file.
