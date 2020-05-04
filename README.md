@@ -6,7 +6,7 @@
 ### Setup Python Virtual Environment (Optional)
 
 0. Install virtual environment package:
-``python3 -m pip install -u virtualenv``
+``python3 -m pip install --user virtualenv``
 1. Create a new virtual environment in the venv folder: 
 ``python3 -m venv venv``
 2. Activate this environment:
