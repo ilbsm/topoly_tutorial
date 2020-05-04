@@ -1,23 +1,28 @@
 # Test Topoly PIP Package
 
 ### Requirements
-- Python 3 (3.5 or later)
+Python 3 (3.5 or later)
 
 ### Setup Python Virtual Environment (Optional)
 
-0. Install virtual environment package:
-``python3 -m pip install --user virtualenv``
-1. Create a new virtual environment in the venv folder: 
-``python3 -m venv venv``
+1. Create a new virtual environment in the venv folder:  
+``python3 -m venv venv`` 
+or:  
+``python3 -m virtualenv venv``   
+depending whether you use the python3 built-in ``venv`` module or the optional ``virtualenv``.
+If ``venv`` is not available you can install ``virtualenv`` by running:  
+``python3 -m pip install --user virtualenv``   
 2. Activate this environment:
 ``source venv/bin/activate``
-3. You may need to update pip before installing topoly:
-``pip3 install --upgrade pip``
+
 
 ### Install Topoly package
 
-Install topoly package
-``pip install topoly``
+1. You may need to update pip before installing topoly:
+``pip3 install --upgrade pip``
+
+2. Install topoly package
+``pip3 install topoly``
 
 ### Run tutorial examples
 
