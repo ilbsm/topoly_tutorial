@@ -1,5 +1,5 @@
 from topoly import conway, gln, plot_matrix, find_spots, translate_matrix
-from topoly.params import Closure, PlotFormat, OutputFormat, GlnMode, test
+from topoly.params import Closure, PlotFormat, OutputFormat, test
 
 """
 If you want to check all possible subchains for knotting or to calculate
@@ -35,9 +35,9 @@ print('\n\n== Knot map ==')
 # parameter „tries=10", to make possible calculating whole matrix 
 # on ordinary computer quickly.
 
-knot_matrix = conway(polygon, tries=10, matrix=True, density=1, level=0, 
-                matrix_plot=True, plot_format = PlotFormat.PDF,
-                plot_ofile = 'map_knot')
+knot_matrix = conway(polygon, tries=10, matrix=True, matrix_density=1, 
+                matrix_calc_cutoff=0, matrix_map=True, 
+                matrix_format = PlotFormat.PDF, map_filename = 'map_knot')
 print('\n resulting knot matrix:', knot_matrix)
 
 #===================================
@@ -48,8 +48,8 @@ print('\n\n== GLN map ==')
 # mode. In this mode you will get GLN values between first arc and all 
 # possible subchains of arc2:
                                                                                 
-gln_matrix = gln(arc2, arc1, matrix=True, matrix_plot=True, 
-                 matrix_plot_fname='map_gln', matrix_plot_format=PlotFormat.PDF)
+gln_matrix = gln(arc2, arc1, matrix=True, matrix_map=True, 
+                 map_filename='map_gln', map_fileformat=PlotFormat.PDF)
 print('\n resulting gln matrix:', gln_matrix)
 
 #=====================
@@ -78,5 +78,5 @@ print('\n gln centers:', gln_centers)
 # plot_matrix prints map after passing matrix. It has more plotting 
 # parameters than invariant calcluating functions, giving you more
 # control over printed output. 
-matrix2 = plot_matrix(gln_matrix, arrows=False, cutoff=0.2, plot_format='pdf',
-                      plot_ofile = 'map_gln2')
+matrix2 = plot_matrix(gln_matrix, map_arrows=False, map_cutoff=0.2, 
+                      map_fileformat='pdf', map_filename = 'map_gln2')

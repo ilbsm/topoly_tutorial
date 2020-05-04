@@ -109,8 +109,8 @@ print('\n\n== Subchains ==')
 # Using parameter „boundaries" you can find topology of fragment of             
 # passed chain.                                                                 
                                                                                 
-subchain = homfly(structure_open, boundaries=[[3,40]])                                 
-subchains = homfly(structure_open, boundaries=[[3,40],[40,80]])                        
+subchain = homfly(structure_open, chain_boundary=[[3,40]])                                 
+subchains = homfly(structure_open, chain_boundary=[[3,40],[40,80]])                        
                                                                                 
 print('\n result subchain:', subchain)                                          
 print('\n result subchains:', subchains) 
@@ -135,9 +135,9 @@ print('\n\n== Knot map ==')
 # on ordinary computer quickly.
 
 polygon='data/knot51.xyz'
-knot_matrix = conway(polygon, tries=10, matrix=True, density=1, level=0,
-                matrix_plot=True, plot_format = PlotFormat.PDF,
-                plot_ofile = 'map_knot')
-print('\n resulting knot matrix:', knot_matrix)
+knot_matrix = conway(polygon, tries=10, matrix=True, matrix_density=1, 
+                matrix_calc_cutoff=0, matrix_map=True, 
+                map_fileformat = PlotFormat.PDF, map_filename = 'map_knot')
+print('\n resulting knot matrix:\n', knot_matrix)
 
 # For more info about matrix manipulation check „matrices.py".

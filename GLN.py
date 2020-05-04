@@ -1,5 +1,5 @@
 from topoly import gln
-from topoly.params import GlnMode, PlotFormat, test
+from topoly.params import PlotFormat, test
 
 """
 Gaussian linking number (GLN) is a measure how much two chains are
@@ -46,8 +46,8 @@ print('\nAverage GLN between subchains of arc1 and subchains of arc2:', avggln)
 # In this mode you will get GLN values between first arc and all possible 
 # subchains of arc2:
 
-matrixgln = gln(arc2, arc1, matrix=True, matrix_plot=True, 
-                matrix_plot_fname='glnmap', matrix_plot_format=PlotFormat.PDF)
+matrixgln = gln(arc2, arc1, matrix=True, matrix_map=True, 
+                map_filename='glnmap', map_fileformat=PlotFormat.PDF)
 print('\nglnmap.pdf file with gln map generated.')
 
 # For more information about matrix manipulation check „matrices.py" file.
