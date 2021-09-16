@@ -53,7 +53,7 @@ print('\nresult ONE_POINT:', one)
 print('\nresult RAYS:', rays)
 
 # As you see, the result depends on chosen closure method. It is
-# a tradeoff for posibility of finding knot type of open chain.
+# a tradeoff for possibility of finding knot type of open chain.
 
 
 #=================
@@ -62,7 +62,7 @@ print('\nresult RAYS:', rays)
 print('\n\n== Number of tries ==')
 
 # If you want to have you calculation more accurate (or give up 
-# accuracy for faster calcukation), use „tries" parameter. It describes
+# accuracy for faster calculation), use „tries" parameter. It describes
 # how many times calculation will be repeated. This parameter only makes
 # sense for probabilistic closure methods: TWO_POINTS (default), 
 # ONE_POINT and RAYS. Lets run function with three different values of
