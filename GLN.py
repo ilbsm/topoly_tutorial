@@ -33,7 +33,7 @@ print('\nGLN between subchains of one structure:', onearc)
 # values passed to the max_density, the number of atoms will be cut and 
 # analysed subsequently.
 
-maxgln = gln(arc1, arc2, maxGLN=True, max_density=1)
+maxgln = gln(arc1, arc2, maxGLN=True)
 print('\nMax GLN between subchains of arc1 and subchains of arc2:', maxgln)
 
 # Also you can find average value of gln over all possible subchains of both

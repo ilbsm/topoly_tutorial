@@ -64,19 +64,19 @@ print('\n\n== Matrix manipulation ==')
 # * or translate_matrix function which changes representation of given
 # matrix.
 
-translate_matrix(knot_matrix, output_format = OutputFormat.Matrix)
-translate_matrix(gln_matrix, output_format = OutputFormat.Dictionary)
+translate_matrix(knot_matrix, output_format=OutputFormat.Matrix)
+translate_matrix(gln_matrix, output_format= OutputFormat.Dictionary)
 
 # find_spots finds geometrical centers of each identified topology
 # field.
 
-knot_centers = find_spots(knot_matrix, gap_size = 0, spot_size = 5)
+#knot_centers = find_spots(knot_matrix, gap_size = 0, spot_size = 5)
 gln_centers = find_spots(gln_matrix, gap_size = 0, spot_size = 5)
-print('\n knot centers:', knot_centers)
+#print('\n knot centers:', knot_centers)
 print('\n gln centers:', gln_centers)
 
-# plot_matrix prints map after passing matrix. It has more plotting 
+# plot_matrix prints map after passing matrix. It has more plotting
 # parameters than invariant calcluating functions, giving you more
-# control over printed output. 
-matrix2 = plot_matrix(gln_matrix, map_arrows=False, map_cutoff=0.2, 
+# control over printed output.
+matrix2 = plot_matrix(gln_matrix, map_arrows=False, map_cutoff=0.2,
                       map_fileformat='pdf', map_filename = 'map_gln2')
