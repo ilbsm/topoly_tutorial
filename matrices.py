@@ -57,23 +57,23 @@ print('\n resulting gln matrix:', gln_matrix)
 #=====================
 print('\n\n== Matrix manipulation ==')
 
-# Defaultly gln_matrix is represented as list of list, and knot_matrix
-# defaultly is represented as a dictionary. This can be changed using:
+# Defaultly a knot_matrix is represented as a dictionary. This can be changed using:
 # * output_format parameter (output_format=OutputFormat.Dictionary,
 #                            output_format=OutputFormat.Matrix) 
 # * or translate_matrix function which changes representation of given
 # matrix.
 
-translate_matrix(knot_matrix, output_format=OutputFormat.Matrix)
-translate_matrix(gln_matrix, output_format= OutputFormat.Dictionary)
+translated_knot_matrix = translate_matrix(knot_matrix, output_format=OutputFormat.Matrix)
+#print('\n translated knot matrix:', translated_knot_matrix)
+#translated_gln_matrix = translate_matrix(gln_matrix, output_format=OutputFormat.Dictionary)
 
 # find_spots finds geometrical centers of each identified topology
 # field.
 
-#knot_centers = find_spots(knot_matrix, gap_size = 0, spot_size = 5)
-gln_centers = find_spots(gln_matrix, gap_size = 0, spot_size = 5)
-#print('\n knot centers:', knot_centers)
-print('\n gln centers:', gln_centers)
+knot_centers = find_spots(knot_matrix, gap_size = 0, spot_size = 5)
+#gln_centers = find_spots(gln_matrix, gap_size = 0, spot_size = 5)
+print('\n knot centers:', knot_centers)
+#print('\n gln centers:', gln_centers)
 
 # plot_matrix prints map after passing matrix. It has more plotting
 # parameters than invariant calcluating functions, giving you more
